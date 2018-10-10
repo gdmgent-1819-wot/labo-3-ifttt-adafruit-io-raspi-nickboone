@@ -8,8 +8,8 @@ import requests
 
 sense = SenseHat()
 
-ADAFRUIT_IO_USERNAME = "nb2312"
-ADAFRUIT_IO_KEY = "bfe8c03bc8634695ad40bf5d91d44feb"
+ADAFRUIT_IO_USERNAME = ""
+ADAFRUIT_IO_KEY = ""
 
 def connected(client):
       client.subscribe('IFTTT_button') # or change to whatever name you used
@@ -26,7 +26,7 @@ def ring_creater(payload):
 def timecal(event):
     if event.action == ACTION_RELEASED:
         datetime.datetime.now()
-        r = requests.get('https://io.adafruit.com/api/v2/nb2312/feeds/ifttt-button/data/last')
+        r = requests.get('')
         print(r.json())
     
 sense.stick.direction_any = timecal
